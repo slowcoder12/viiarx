@@ -1,0 +1,1946 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>VIIIARX — Sri ViiaRx Life Sciences Pvt Ltd</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0a1f3d;
+        --navy-light: #143a5e;
+        --navy-soft: #1e4a73;
+        --teal: #0ea5a0;
+        --teal-light: #14b8a6;
+        --teal-soft: #ccfbf1;
+        --green: #22c55e;
+        --green-soft: #dcfce7;
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --text: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      ::selection {
+        background: var(--teal-soft);
+        color: var(--navy);
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--navy);
+        border-radius: 3px;
+      }
+
+      /* ========== NAVIGATION ========== */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 82px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(18px) saturate(1.2);
+        padding: 0 4%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 0 rgba(10, 31, 61, 0.08);
+        transition:
+          box-shadow 0.35s ease,
+          background 0.35s ease;
+      }
+
+      nav.scrolled {
+        background: rgba(255, 255, 255, 0.99);
+        box-shadow:
+          0 1px 0 rgba(10, 31, 61, 0.08),
+          0 10px 35px rgba(10, 31, 61, 0.08);
+      }
+
+      .logo-link {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        height: 100%;
+        padding: 8px 0;
+      }
+
+      .logo-img {
+        width: clamp(235px, 21vw, 315px);
+        height: 62px;
+        object-fit: contain;
+        object-position: left center;
+        display: block;
+        transition:
+          width 0.3s ease,
+          height 0.3s ease;
+        filter: none;
+      }
+
+      nav.scrolled .logo-img {
+        width: clamp(225px, 20vw, 295px);
+        height: 58px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--navy);
+        font-weight: 500;
+        font-size: 0.88rem;
+        letter-spacing: 0.01em;
+        position: relative;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--teal);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--teal);
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-cta {
+        background: var(--teal);
+        color: white !important;
+        padding: 0.55rem 1.3rem;
+        border-radius: 100px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+        border: 1.5px solid var(--teal);
+      }
+
+      .nav-cta:hover {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: white !important;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: var(--navy);
+      }
+
+      /* ========== HERO ========== */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--navy-light) 40%,
+          #0f4c5c 100%
+        );
+        padding: 8.5rem 4% 4rem;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -30%;
+        right: -15%;
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(
+          circle,
+          rgba(14, 165, 160, 0.25) 0%,
+          transparent 65%
+        );
+        animation: orbFloat 10s ease-in-out infinite;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -20%;
+        left: -10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(34, 197, 94, 0.12) 0%,
+          transparent 65%
+        );
+        animation: orbFloat 12s ease-in-out infinite reverse;
+      }
+      @keyframes orbFloat {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(25px, -25px) scale(1.08);
+        }
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+        max-width: 1300px;
+        margin: 0 auto;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* .hero-content {
+      } */
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 0.5rem 1.1rem;
+        border-radius: 100px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+      .hero-badge .pulse {
+        width: 7px;
+        height: 7px;
+        background: var(--teal);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(14, 165, 160, 0.7);
+        }
+        50% {
+          opacity: 0.7;
+          transform: scale(1.2);
+          box-shadow: 0 0 0 8px rgba(14, 165, 160, 0);
+        }
+      }
+
+      .hero h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(2.8rem, 5.5vw, 5rem);
+        line-height: 1.08;
+        font-weight: 400;
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+      .hero h1 em {
+        color: var(--teal-light);
+        font-style: italic;
+      }
+
+      .hero-desc {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.7;
+        max-width: 480px;
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-main {
+        background: var(--teal);
+        color: white;
+        padding: 0.95rem 2rem;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 0.92rem;
+        text-decoration: none;
+        transition: all 0.4s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        border: 1.5px solid var(--teal);
+        letter-spacing: 0.01em;
+      }
+      .btn-main:hover {
+        background: transparent;
+        color: var(--teal);
+        transform: translateY(-2px);
+      }
+
+      .btn-ghost {
+        color: white;
+        padding: 0.95rem 2rem;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 0.92rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        transition: all 0.4s;
+      }
+      .btn-ghost:hover {
+        border-color: white;
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-2px);
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+      .hero-img-wrap {
+        position: relative;
+        border-radius: 28px;
+        overflow: hidden;
+        aspect-ratio: 4/5;
+        max-height: 580px;
+        box-shadow: 0 40px 80px rgba(10, 31, 61, 0.3);
+      }
+      .hero-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 8s ease;
+      }
+      .hero-img-wrap:hover img {
+        transform: scale(1.05);
+      }
+      .hero-img-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 31, 61, 0.5) 0%,
+          transparent 55%
+        );
+      }
+
+      .float-card {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 1.2rem 1.6rem;
+        border-radius: 16px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        animation: floatCard 5s ease-in-out infinite;
+      }
+      @keyframes floatCard {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .float-card .num {
+        font-family: "DM Serif Display", serif;
+        font-size: 2rem;
+        color: var(--navy);
+        line-height: 1;
+      }
+      .float-card .txt {
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        margin-top: 0.2rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+
+      /* ========== MARQUEE ========== */
+      .marquee-wrap {
+        background: var(--navy);
+        color: white;
+        padding: 1rem 0;
+        overflow: hidden;
+        position: relative;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .marquee-track {
+        display: flex;
+        gap: 3rem;
+        animation: marquee 22s linear infinite;
+        white-space: nowrap;
+        width: max-content;
+      }
+      .marquee-track span {
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.55;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .marquee-track span::after {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background: var(--teal);
+        border-radius: 50%;
+        opacity: 0.6;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ========== SECTIONS BASE ========== */
+      section {
+        padding: 6rem 4%;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .sec-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-bottom: 1rem;
+      }
+      .sec-label::before {
+        content: "";
+        width: 24px;
+        height: 2px;
+        background: var(--teal);
+      }
+
+      .sec-title {
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(2.2rem, 4vw, 3.6rem);
+        line-height: 1.1;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        color: var(--navy);
+      }
+      .sec-title em {
+        font-style: italic;
+        color: var(--teal);
+      }
+
+      .sec-desc {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        max-width: 540px;
+      }
+
+      /* ========== ABOUT ========== */
+      .about-sec {
+        background: var(--surface);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .about-text p {
+        font-size: 1rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+        margin-bottom: 1.3rem;
+      }
+      .about-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        margin-top: 2.2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+      }
+      .astat .astat-num {
+        font-family: "DM Serif Display", serif;
+        font-size: 1.9rem;
+        color: var(--navy);
+      }
+      .astat .astat-label {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 0.15rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+
+      .about-img-wrap {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+      }
+      .about-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .about-deco {
+        position: absolute;
+        top: -18px;
+        right: -18px;
+        width: 100px;
+        height: 100px;
+        border: 2px solid var(--teal);
+        border-radius: 50%;
+        opacity: 0.35;
+        animation: spin 18s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ========== PRODUCTS ========== */
+      .products-sec {
+        background: var(--bg);
+      }
+      .products-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 3.5rem;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.4rem;
+      }
+      .prod-card {
+        background: var(--surface);
+        border-radius: 20px;
+        padding: 2rem;
+        border: 1px solid var(--border);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        cursor: default;
+      }
+      .prod-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--teal), var(--green));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .prod-card:hover::before {
+        transform: scaleX(1);
+      }
+      .prod-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 25px 50px rgba(10, 31, 61, 0.08);
+        border-color: transparent;
+      }
+      .prod-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--teal-soft);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--teal);
+        margin-bottom: 1.3rem;
+        transition: all 0.4s;
+      }
+      .prod-card:hover .prod-icon {
+        background: var(--navy);
+        color: white;
+        transform: rotate(-4deg) scale(1.05);
+      }
+      .prod-card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--navy);
+      }
+      .prod-card p {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .prod-arrow {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1.5px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        transition: all 0.3s;
+      }
+      .prod-card:hover .prod-arrow {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: white;
+        transform: translateX(3px);
+      }
+
+      /* ========== COMPLIANCE ========== */
+      .certs-sec {
+        background: var(--navy);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+      .certs-sec::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+      .certs-sec .sec-label {
+        color: var(--teal);
+      }
+      .certs-sec .sec-label::before {
+        background: var(--teal);
+      }
+      .certs-sec .sec-title {
+        color: white;
+      }
+      .certs-sec .sec-desc {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .certs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4rem;
+        margin-top: 3.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .cert-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 2rem;
+        transition: all 0.4s;
+      }
+      .cert-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-4px);
+        border-color: rgba(14, 165, 160, 0.3);
+      }
+      .cert-card i {
+        font-size: 1.8rem;
+        color: var(--teal);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .cert-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+      }
+      .cert-card p {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.6;
+      }
+
+      /* ========== CONTACT ========== */
+      .contact-sec {
+        background: var(--surface);
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 5rem;
+        align-items: start;
+      }
+      .contact-info h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
+        color: var(--navy);
+      }
+      .contact-info > p {
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 2.2rem;
+        font-size: 1rem;
+      }
+      .contact-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .contact-row i {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        background: var(--teal-soft);
+        color: var(--teal);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.95rem;
+      }
+      .contact-row div strong {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 0.1rem;
+        color: var(--navy);
+      }
+      .contact-row div span {
+        color: var(--text-muted);
+        font-size: 0.88rem;
+      }
+
+      .contact-form {
+        background: var(--bg);
+        border-radius: 24px;
+        padding: 2.2rem;
+        border: 1px solid var(--border);
+      }
+      .form-group {
+        margin-bottom: 1.2rem;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        margin-bottom: 0.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border: 1.5px solid var(--border);
+        border-radius: 12px;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.92rem;
+        background: var(--surface);
+        color: var(--text);
+        transition: all 0.3s;
+        outline: none;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        border-color: var(--teal);
+        box-shadow: 0 0 0 4px rgba(14, 165, 160, 0.1);
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-submit {
+        width: 100%;
+        padding: 0.95rem;
+        background: var(--navy);
+        color: white;
+        border: 1.5px solid var(--navy);
+        border-radius: 12px;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.93rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+      }
+      .form-submit:hover {
+        background: transparent;
+        color: var(--navy);
+      }
+
+      /* ========== API PRODUCTS MODAL ========== */
+      .api-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background: rgba(10, 31, 61, 0.72);
+        backdrop-filter: blur(8px);
+      }
+      .api-modal.open {
+        display: flex;
+      }
+      .api-modal-panel {
+        width: min(1120px, 100%);
+        max-height: 88vh;
+        overflow: auto;
+        background: var(--surface);
+        border-radius: 24px;
+        box-shadow: 0 30px 80px rgba(10, 31, 61, 0.28);
+      }
+      .api-modal-head {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.5rem 1.7rem;
+        background: rgba(255, 255, 255, 0.97);
+        border-bottom: 1px solid var(--border);
+      }
+      .api-modal-head h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: var(--navy);
+      }
+      .api-modal-head h2 em {
+        color: var(--teal);
+      }
+      .api-close {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        background: var(--bg);
+        color: var(--navy);
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .api-modal-body {
+        padding: 1.5rem 1.7rem 1.8rem;
+      }
+      .api-strong {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin-bottom: 1rem;
+        color: var(--teal);
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .api-strong::before {
+        content: "";
+        width: 24px;
+        height: 2px;
+        background: var(--teal);
+      }
+      .api-table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+      }
+      .api-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 900px;
+      }
+      .api-table th {
+        background: var(--navy);
+        color: white;
+        text-align: left;
+        padding: 0.9rem 1rem;
+        font-size: 0.76rem;
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+      }
+      .api-table td {
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.86rem;
+      }
+      .api-table tbody tr:last-child td {
+        border-bottom: 0;
+      }
+      .api-table tbody tr:hover {
+        background: var(--teal-soft);
+      }
+      .api-table td:nth-child(1),
+      .api-table td:nth-child(3) {
+        text-align: center;
+      }
+      .api-table td:nth-child(2) {
+        color: var(--navy);
+        font-weight: 600;
+      }
+      .dmf-yes {
+        color: var(--teal);
+        font-weight: 800;
+      }
+      @media (max-width: 600px) {
+        .api-modal {
+          padding: 0.7rem;
+        }
+        .api-modal-panel {
+          max-height: 92vh;
+          border-radius: 18px;
+        }
+        .api-modal-head,
+        .api-modal-body {
+          padding: 1.1rem;
+        }
+        .api-modal-head h2 {
+          font-size: 1.45rem;
+        }
+      }
+
+      /* ========== FOOTER ========== */
+      footer {
+        background: var(--navy);
+        color: white;
+        padding: 3.5rem 4% 1.5rem;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 3rem;
+        margin-bottom: 2.5rem;
+      }
+      .footer-brand .flogo {
+        font-family: "DM Serif Display", serif;
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        display: block;
+      }
+      .footer-brand p {
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.88rem;
+        line-height: 1.7;
+        max-width: 280px;
+      }
+      .footer-social {
+        display: flex;
+        gap: 0.7rem;
+        margin-top: 1.2rem;
+      }
+      .footer-social a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.8rem;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+      .footer-social a:hover {
+        background: var(--teal);
+        border-color: var(--teal);
+        color: white;
+        transform: translateY(-2px);
+      }
+      .footer-col h4 {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+        margin-bottom: 1rem;
+      }
+      .footer-col a {
+        display: block;
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        font-size: 0.87rem;
+        margin-bottom: 0.6rem;
+        transition: color 0.3s;
+      }
+      .footer-col a:hover {
+        color: var(--teal);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding-top: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .footer-bottom span {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* ========== REVEAL ========== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .rd1 {
+        transition-delay: 0.1s;
+      }
+      .rd2 {
+        transition-delay: 0.2s;
+      }
+      .rd3 {
+        transition-delay: 0.3s;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 900px) {
+        .hero-grid,
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-visual {
+          order: 1;
+        }
+        .hero-content {
+          order: 2;
+        }
+        .certs-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .products-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav-links {
+          display: none;
+        }
+        .mobile-menu-btn {
+          display: block;
+        }
+      }
+      @media (max-width: 600px) {
+        .about-stats {
+          grid-template-columns: 1fr;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        section {
+          padding: 4rem 5%;
+        }
+        .hero {
+          padding: 6rem 5% 3rem;
+        }
+        .logo-img {
+          width: 215px;
+          height: 50px;
+        }
+        nav.scrolled .logo-img {
+          width: 205px;
+          height: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <a class="logo-link" href="#"
+        ><img alt="VIIIARX" class="logo-img" src="viiarx-logo-navbar.png"
+      /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#certifications">Compliance</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="nav-cta" href="#contact">Enquire Now</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse"></span> Pharma Trading &amp; Lifesciences
+          </div>
+          <h1>Bridging APIs to <em>Formulations</em> Worldwide</h1>
+          <p class="hero-desc">
+            Sri ViiaRx Life Sciences is a trusted trading partner in
+            pharmaceutical bulk drugs, intermediates, pellets, nutraceuticals,
+            and enzymes — connecting GMP-certified manufacturers to global
+            markets.
+          </p>
+          <div class="hero-actions">
+            <a class="btn-main" href="#products"
+              >Explore Products <i class="fas fa-arrow-right"></i
+            ></a>
+            <a class="btn-ghost" href="#contact"
+              >Get a Quote <i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-img-wrap">
+            <img
+              alt="Pharma Lab"
+              src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=900&amp;q=80"
+            />
+            <div class="hero-img-overlay"></div>
+            <div class="float-card">
+              <div class="num">10+</div>
+              <div class="txt">Years of Excellence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span>Active Pharmaceutical Ingredients</span>
+        <span>Pharmaceutical Intermediates</span>
+        <span>Excipients</span>
+        <span>Industrial Enzymes</span>
+        <span>Regulatory Exports</span>
+        <span>Regulatory Imports</span>
+        <span>Active Pharmaceutical Ingredients</span>
+        <span>Pharmaceutical Intermediates</span>
+        <span>Excipients</span>
+        <span>Industrial Enzymes</span>
+        <span>Regulatory Exports</span>
+        <span>Regulatory Imports</span>
+      </div>
+    </div>
+    <section class="about-sec" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img-wrap reveal">
+            <img
+              alt="About"
+              src="https://images.unsplash.com/photo-1684695749267-233af13276d0?w=900&amp;q=90"
+            />
+            <div class="about-deco"></div>
+          </div>
+          <div class="about-text reveal">
+            <div class="sec-label">About Us</div>
+            <h2 class="sec-title">
+              Committed to <em>Health</em>,<br />Rooted in Trust
+            </h2>
+            <p>
+              Sri ViiaRx Life Sciences was founded with a clear purpose — to
+              make quality healthcare accessible globally without compromising
+              the environment. We serve as a vital link in the pharmaceutical
+              supply chain, sourcing from GMP-certified partners and delivering
+              to regulatory and non-regulatory markets alike.
+            </p>
+            <p>
+              Our strength lies in deep industry relationships, rigorous quality
+              checks, and an unwavering commitment to compliance. Whether you
+              need bulk APIs, specialized intermediates, we ensure every
+              shipment meets the highest standards.
+            </p>
+            <div class="about-stats">
+              <div class="astat">
+                <div class="astat-num">6</div>
+                <div class="astat-label">Product Verticals</div>
+              </div>
+              <div class="astat">
+                <div class="astat-num">GMP</div>
+                <div class="astat-label">Certified Network</div>
+              </div>
+              <div class="astat">
+                <div class="astat-num">Global</div>
+                <div class="astat-label">Market Reach</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="products-sec" id="products">
+      <div class="container">
+        <div class="products-header reveal">
+          <div>
+            <div class="sec-label">Our Portfolio</div>
+            <h2 class="sec-title">What We <em>Trade</em></h2>
+          </div>
+          <!-- <p class="sec-desc">
+            End-to-end pharmaceutical sourcing across six key categories,
+            delivered with documentation and logistics support.
+          </p> -->
+        </div>
+        <div class="products-grid">
+          <div
+            class="prod-card reveal rd1"
+            onclick="openApiModal()"
+            onkeydown="
+              if (event.key === 'Enter' || event.key === ' ') {
+                openApiModal();
+              }
+            "
+            role="button"
+            style="cursor: pointer"
+            tabindex="0"
+          >
+            <div class="prod-icon"><i class="fas fa-flask"></i></div>
+            <h3>APIs / Bulk Drugs</h3>
+            <p>
+              High-purity Active Pharmaceutical Ingredients sourced from audited
+              GMP facilities for formulation and manufacturing needs.
+            </p>
+            <div class="prod-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <div
+            class="prod-card reveal rd2"
+            onclick="openIntermediateModal()"
+            onkeydown="
+              if (event.key === 'Enter' || event.key === ' ') {
+                openIntermediateModal();
+              }
+            "
+            role="button"
+            style="cursor: pointer"
+            tabindex="0"
+          >
+            <div class="prod-icon"><i class="fas fa-vials"></i></div>
+            <h3>Intermediates</h3>
+            <p>
+              Critical chemical intermediates that serve as building blocks in
+              complex drug synthesis and production pipelines.
+            </p>
+            <div class="prod-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <div
+            class="prod-card reveal rd3"
+            onclick="openExcipientModal()"
+            onkeydown="
+              if (event.key === 'Enter' || event.key === ' ') {
+                openExcipientModal();
+              }
+            "
+            role="button"
+            style="cursor: pointer"
+            tabindex="0"
+          >
+            <div class="prod-icon"><i class="fas fa-capsules"></i></div>
+            <h3>Excipients</h3>
+            <p>
+              High-quality pharmaceutical excipients designed to enhance
+              formulation performance, stability, and product consistency.
+            </p>
+            <div class="prod-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <!-- <div class="prod-card reveal rd1">
+            <div class="prod-icon"><i class="fas fa-leaf"></i></div>
+            <h3>Nutraceuticals</h3>
+            <p>
+              Science-backed nutritional supplements and functional ingredients
+              bridging preventive care and wellness.
+            </p>
+            <div class="prod-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div> -->
+          <div class="prod-card reveal rd2">
+            <div class="prod-icon"><i class="fas fa-atom"></i></div>
+            <h3>Enzymes</h3>
+            <p>
+              Specialized biocatalysts for pharmaceutical synthesis,
+              diagnostics, and industrial bioprocessing applications.
+            </p>
+            <div class="prod-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+          <div class="prod-card reveal rd3">
+            <div class="prod-icon"><i class="fas fa-shipping-fast"></i></div>
+            <h3>Export/Import Services</h3>
+            <p>
+              Complete regulatory documentation, cold-chain logistics, and
+              customs clearance for seamless global delivery.
+            </p>
+            <div class="prod-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="certs-sec" id="certifications">
+      <div class="container">
+        <div class="reveal">
+          <div class="sec-label">Quality Assurance</div>
+          <h2 class="sec-title">Built on <em>Global</em> Standards</h2>
+          <p class="sec-desc">
+            Every partner facility in our network meets or exceeds international
+            regulatory benchmarks.
+          </p>
+        </div>
+        <div class="certs-grid">
+          <div class="cert-card reveal rd1">
+            <i class="fas fa-certificate"></i>
+            <h3>US-FDA Approved</h3>
+            <p>
+              Manufacturing partners hold active US-FDA approvals, enabling
+              seamless exports to the United States and aligned markets.
+            </p>
+          </div>
+          <div class="cert-card reveal rd2">
+            <i class="fas fa-globe"></i>
+            <h3>WHO Prequalified</h3>
+            <p>
+              Facilities prequalified by the World Health Organization, ensuring
+              compliance with international quality benchmarks.
+            </p>
+          </div>
+          <div class="cert-card reveal rd3">
+            <i class="fas fa-award"></i>
+            <h3>GMP Compliant</h3>
+            <p>
+              Stringent Good Manufacturing Practice standards maintained across
+              all partnered production units and warehouses.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact-sec" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="sec-label">Contact</div>
+            <h3>Let's Talk <em>Business</em></h3>
+            <p>
+              Whether you are a manufacturer looking for distribution or a buyer
+              seeking reliable Intermediates, API, Excipients, — we are here to
+              help.
+            </p>
+            <div class="contact-row">
+              <i class="fas fa-map-marker-alt"></i>
+              <div><strong>Headquarters</strong><span>India</span></div>
+            </div>
+            <div class="contact-row">
+              <i class="fas fa-envelope"></i>
+              <div><strong>Email</strong><span>info@viiaRx.com</span></div>
+            </div>
+            <div class="contact-row">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Response Time</strong><span>Within 24 hours</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form reveal rd2">
+            <form
+              onsubmit="
+                event.preventDefault();
+                this.innerHTML =
+                  '&lt;div style=\'text-align:center;padding:3rem 0\'&gt;&lt;i class=\'fas fa-check-circle\' style=\'font-size:3rem;color:var(--teal);margin-bottom:1rem\'&gt;&lt;/i&gt;&lt;h3 style=\'font-family:DM Serif Display;font-size:1.5rem;margin-bottom:0.5rem;color:var(--navy)\'&gt;Message Sent!&lt;/h3&gt;&lt;p style=\'color:var(--text-muted)\'&gt;We will get back to you within 24 hours.&lt;/p&gt;&lt;/div&gt;';
+              "
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input placeholder="John" required="" type="text" />
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input placeholder="Doe" type="text" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input
+                  placeholder="john@company.com"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div class="form-group">
+                <label>Company</label>
+                <input placeholder="Your Company Name" type="text" />
+              </div>
+              <div class="form-group">
+                <label>Product Interest</label>
+                <select>
+                  <option>APIs / Bulk Drugs</option>
+                  <option>Intermediates</option>
+                  <option>Pellets</option>
+                  <option>Nutraceuticals</option>
+                  <option>Enzymes</option>
+                  <option>Export Services</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea
+                  placeholder="Tell us about your requirements, quantities, and destination markets..."
+                ></textarea>
+              </div>
+              <button class="form-submit" type="submit">
+                Send Enquiry <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      aria-hidden="true"
+      class="api-modal"
+      id="apiModal"
+      onclick="if (event.target === this) closeApiModal();"
+    >
+      <div
+        aria-labelledby="apiModalTitle"
+        aria-modal="true"
+        class="api-modal-panel"
+        role="dialog"
+      >
+        <div class="api-modal-head">
+          <h2 id="apiModalTitle">APIs / <em>Bulk Drugs</em></h2>
+          <button
+            aria-label="Close"
+            class="api-close"
+            onclick="closeApiModal()"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="api-modal-body">
+          <div class="api-strong">Our Strong Products</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <thead>
+                <tr>
+                  <th>Sr. No.</th>
+                  <th>Product Name</th>
+                  <th>Grade</th>
+                  <th>Therapeutic Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Atorvastatin Calcium</td>
+                  <td>IP/BP/USP</td>
+                  <td>Cardiovascular</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Azithromycin</td>
+                  <td>IP/BP/EP/USP</td>
+                  <td>Anti-Bacterial Infection</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Citicoline Sodium</td>
+                  <td>IH/IP/USP</td>
+                  <td>Nootropic, Psychostimulants</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Dorzolamide</td>
+                  <td>IP/BP/EP/USP</td>
+                  <td>Topical Beta Blockers</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Fluconazole</td>
+                  <td>IP/BP/USP</td>
+                  <td>Anti-Fungal/Triazoles</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Montelukast Sodium</td>
+                  <td>IP/EP/USP</td>
+                  <td>Anti-Asthmatic</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Nitrofurantoin</td>
+                  <td>IP/EP/USP</td>
+                  <td>Antibiotic/Anti-Bacterial</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Rosuvastatin Calcium</td>
+                  <td>IP/BP/USP</td>
+                  <td>Cardiovascular</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Tadalafil</td>
+                  <td>IP/BP/USP</td>
+                  <td>Erectile Dysfunction</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Tigecycline</td>
+                  <td>IP/BP/USP</td>
+                  <td>Anti-Bacterial</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="api-modal"
+      id="intermediateModal"
+      onclick="if (event.target === this) closeIntermediateModal();"
+    >
+      <div
+        aria-labelledby="intermediateModalTitle"
+        aria-modal="true"
+        class="api-modal-panel"
+        role="dialog"
+      >
+        <div class="api-modal-head">
+          <h2 id="intermediateModalTitle"><em>Intermediates</em></h2>
+          <button
+            aria-label="Close"
+            class="api-close"
+            onclick="closeIntermediateModal()"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="api-modal-body">
+          <div class="api-strong">Our Intermediates</div>
+          <div class="api-table-wrap">
+            <table class="api-table" style="min-width: 760px">
+              <thead>
+                <tr>
+                  <th>Sr. No.</th>
+                  <th>Intermediate Name</th>
+                  <th>API Name / End Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    3-(Dimethylamino)-1-(naphthalen-1-yl)propan-1-one
+                    hydrochloride
+                  </td>
+                  <td>Bedaquiline</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    2-[(5-Bromo-2-methylphenyl)methyl]-5-(4-fluorophenyl)thiophene
+                  </td>
+                  <td>Canagliflozin</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>5-Bromo-2-chloro-4'-ethoxydiphenylmethane</td>
+                  <td>Dapagliflozin</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>
+                    (3S)-3-[4-[(2-Chloro-5-iodophenyl)methyl]phenoxy]tetrahydrofuran
+                  </td>
+                  <td>Empagliflozin</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>1-(3,4-Dimethoxyphenethyl)urea</td>
+                  <td>Ensifentrine</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>
+                    8-Bromo-7-(but-2-yn-1-yl)-3-methyl-1H-purine-2,6(3H,7H)-dione
+                  </td>
+                  <td>Linagliptin</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>
+                    8-Bromo-7-but-2-ynyl-3-methyl-1-[(4-methylquinazolin-2-yl)methyl]purine-2,6-dione
+                  </td>
+                  <td>Linagliptin</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>4-(Chloromethyl)-5-methyl-1,3-dioxol-2-one</td>
+                  <td>Olmesartan-DMDO-CL</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>
+                    Ethyl
+                    4-(2-hydroxy-2-propyl)-2-propyl-imidazole-5-carboxylate
+                  </td>
+                  <td>Olmesartan-OLMI-1</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>
+                    5-(4'-(Bromomethyl)-[1,1'-biphenyl]-2-yl)-1-trityl-1H-tetrazole
+                    (TTBB)
+                  </td>
+                  <td>Sartan Family - TTBB</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>D-Tryptophan Methyl Ester Hydrochloride</td>
+                  <td>Tadalafil</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p
+            style="
+              margin-top: 1rem;
+              color: var(--text-muted);
+              font-size: 0.78rem;
+              line-height: 1.6;
+            "
+          >
+            <strong style="color: var(--navy)">Disclaimer:</strong> Patented
+            products are available for R&amp;D purposes only as permitted under
+            35 U.S.C section 271 (e) (I).
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="api-modal"
+      id="excipientModal"
+      onclick="if (event.target === this) closeExcipientModal();"
+    >
+      <div
+        aria-labelledby="excipientModalTitle"
+        aria-modal="true"
+        class="api-modal-panel"
+        role="dialog"
+      >
+        <div class="api-modal-head">
+          <h2 id="excipientModalTitle"><em>Excipients</em></h2>
+          <button
+            aria-label="Close"
+            class="api-close"
+            onclick="closeExcipientModal()"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="api-modal-body">
+          <div class="api-strong">Common Pharmaceutical Excipients</div>
+          <div class="api-table-wrap">
+            <table class="api-table">
+              <thead>
+                <tr>
+                  <th>Sr. No.</th>
+                  <th>Excipient Name</th>
+                  <th>Primary Function</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Microcrystalline Cellulose (MCC)</td>
+                  <td>Binder / Diluent</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Lactose Monohydrate</td>
+                  <td>Diluent / Filler</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Magnesium Stearate</td>
+                  <td>Lubricant</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Colloidal Silicon Dioxide</td>
+                  <td>Glidant / Flow Aid</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Croscarmellose Sodium</td>
+                  <td>Disintegrant</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Sodium Starch Glycolate</td>
+                  <td>Disintegrant</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Povidone (PVP K30)</td>
+                  <td>Binder</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Hydroxypropyl Methylcellulose (HPMC)</td>
+                  <td>Coating / Controlled Release</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Talc</td>
+                  <td>Anti-adherent / Glidant</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Starch</td>
+                  <td>Binder / Disintegrant</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="flogo">VIIIARX</span>
+            <p>
+              Sri ViiaRx Life Sciences Private Ltd — Enhancing the quality of
+              health worldwide through ethical pharmaceutical trading.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#about">About Us</a>
+            <a href="#products">Products</a>
+            <a href="#certifications">Compliance</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="#products">APIs / Bulk Drugs</a>
+            <a href="#products">Intermediates</a>
+            <a href="#products">Pellets</a>
+            <a href="#products">Nutraceuticals</a>
+            <a href="#products">Enzymes</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >© 2026 Sri ViiaRx Life Sciences Private Ltd. All rights
+            reserved.</span
+          >
+          <span>Crafted with precision for the pharmaceutical industry.</span>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 40);
+      });
+
+      const mobileBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+      mobileBtn.addEventListener("click", () => {
+        const isOpen = navLinks.style.display === "flex";
+        navLinks.style.display = isOpen ? "none" : "flex";
+        if (!isOpen) {
+          navLinks.style.position = "absolute";
+          navLinks.style.top = "100%";
+          navLinks.style.left = "0";
+          navLinks.style.width = "100%";
+          navLinks.style.background = "var(--surface)";
+          navLinks.style.flexDirection = "column";
+          navLinks.style.padding = "1.5rem";
+          navLinks.style.gap = "1.2rem";
+          navLinks.style.boxShadow = "0 20px 40px rgba(0,0,0,0.1)";
+          navLinks.style.zIndex = "999";
+        }
+      });
+      document.querySelectorAll(".nav-links a").forEach((a) => {
+        a.addEventListener("click", () => {
+          navLinks.style.display = "none";
+        });
+      });
+
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("active");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      reveals.forEach((r) => observer.observe(r));
+
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          const t = document.querySelector(this.getAttribute("href"));
+          if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      function openApiModal() {
+        const modal = document.getElementById("apiModal");
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function closeApiModal() {
+        const modal = document.getElementById("apiModal");
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+      function openIntermediateModal() {
+        const modal = document.getElementById("intermediateModal");
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function closeIntermediateModal() {
+        const modal = document.getElementById("intermediateModal");
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+      function openExcipientModal() {
+        const modal = document.getElementById("excipientModal");
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function closeExcipientModal() {
+        const modal = document.getElementById("excipientModal");
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeApiModal();
+          closeIntermediateModal();
+          closeExcipientModal();
+        }
+      });
+    </script>
+  </body>
+</html>
